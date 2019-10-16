@@ -1,7 +1,7 @@
 <div>
     <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
 
-        <a class="navbar-brand text-success" href="/">
+        <a class="navbar-brand text-success" routerLink="/">
             <img src="assets/brand.png" alt="" height="40">
         </a>
 
@@ -13,27 +13,27 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/users">Annuaire</a>
+                    <a class="nav-link" routerLink="/users" routerLinkActive="active">Annuaire</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/messages">Messages</a>
+                    <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav" *ngIf="isAuthenticated; else authBlock">
                 <li class="nav-item">
-                    <a class="nav-link" href="/" (click)="onLogout()">Se déconnecter</a>
+                    <a class="nav-link" routerLink="/" (click)="onLogout()">Se déconnecter</a>
                 </li>
             </ul>
 
             <ng-template #authBlock>
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">Se connecter</a>
+                        <a class="nav-link" routerLink="/login">Se connecter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-success" href="/register">S'enregistrer</a>
+                        <a class="btn btn-success" routerLink="/register">S'enregistrer</a>
                     </li>
                 </ul>
             </ng-template>
