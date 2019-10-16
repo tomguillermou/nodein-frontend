@@ -4,6 +4,15 @@ h1 {
     color: rgb(56, 199, 147);
 }
 
+.btn-success {
+    border: none;
+    background-color: rgb(56, 199, 147);
+}
+
+.btn-success:hover {
+    background-color: rgb(56, 199, 200);
+}
+
 .form-signin {
     width: 100%;
     max-width: 330px;

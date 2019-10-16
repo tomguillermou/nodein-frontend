@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../_services/authentication.service';
-import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
     selector: 'app-login',
@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
     });
 
     constructor(
-        private formBuilder: FormBuilder,
         private router: Router,
+        private formBuilder: FormBuilder,
         private authenticationService: AuthenticationService
     ) { }
 
@@ -35,11 +35,9 @@ export class LoginComponent implements OnInit {
             this.authenticationService.login(email, password)
                 .subscribe({
                     next: (body): void => {
-                        // Redirects user after he logs in
                         this.router.navigateByUrl('/');
                     },
                     error: (error): void => {
-                        console.warn(error); // to display only in "dev" mode
                         this.error = error;
                     }
                 });
