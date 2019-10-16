@@ -1,4 +1,40 @@
-<img src="assets/logo.png" alt="NodeIn logo" height="60" width="60">
-<h1>{{title}}</h1>
+<div>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="/">NodeIn</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-<router-outlet></router-outlet>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/phonebook">Annuaire</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/messages">Messages</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav" *ngIf="isAuthenticated; else authBlock">
+                <li class="nav-item">
+                    <a class="nav-link" href="" (click)="onLogout()">Se déconnecter</a>
+                </li>
+            </ul>
+
+            <ng-template #authBlock>
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Se connecter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-success" href="/register">S'enregistrer</a>
+                    </li>
+                </ul>
+            </ng-template>
+        </div>
+    </nav>
+
+    <router-outlet></router-outlet>
+</div>

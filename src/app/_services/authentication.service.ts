@@ -29,4 +29,8 @@ export class AuthenticationService {
     logout() {
         localStorage.removeItem('token');
     }
+
+    isLoggedIn() {
+        return localStorage.getItem('token') !== null;
+    }
 }
