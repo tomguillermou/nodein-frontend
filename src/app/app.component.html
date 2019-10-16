@@ -1,6 +1,10 @@
 <div>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a class="navbar-brand" href="/">NodeIn</a>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+
+        <a class="navbar-brand text-success" href="/">
+            <img src="assets/brand.png" alt="" height="40">
+        </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,7 +23,7 @@
 
             <ul class="navbar-nav" *ngIf="isAuthenticated; else authBlock">
                 <li class="nav-item">
-                    <a class="nav-link" href="" (click)="onLogout()">Se déconnecter</a>
+                    <a class="nav-link" href="/" (click)="onLogout()">Se déconnecter</a>
                 </li>
             </ul>
 

@@ -1,16 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-h1 {
+a .navbar-brand {
     color: rgb(56, 199, 147);
-}
-
-.btn-success {
-    border: none;
-    background-color: rgb(56, 199, 147);
-}
-
-.btn-success:hover {
-    background-color: rgb(56, 199, 200);
 }
 
 .form-signin {

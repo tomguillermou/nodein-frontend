@@ -1,22 +1,19 @@
-<form [formGroup]="loginForm" class="form-signin text-center" (ngSubmit)="onSubmit()">
+<form [formGroup]="loginForm" class="form-signin text-center mt-5" (ngSubmit)="onSubmit()">
 
-    <a href="/home">
-        <img class="mb-4" src="assets/logo.png" alt="NodeIn logo" width="72" height="72">
-    </a>
-    <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+    <h1 class="h3 mb-3">Connectez-vous</h1>
 
     <div *ngIf="error" class="alert alert-danger" role="alert">
         <p>{{error.error.message}}</p>
     </div>
 
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" formControlName="email"
+    <label for="inputEmail" class="sr-only">Adresse email</label>
+    <input type="email" id="inputEmail" class="form-control mb-2" placeholder="Adresse email" formControlName="email"
         required autofocus>
 
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password"
+    <label for="inputPassword" class="sr-only">Mot de passe</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" formControlName="password"
         required>
 
-    <button class="btn btn-lg btn-success btn-block mt-3" type="submit">Sign in</button>
+    <button class="btn btn-success btn-block mt-3" type="submit">Se connecter</button>
 
 </form>
