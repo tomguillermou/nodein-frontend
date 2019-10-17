@@ -1,1 +1,12 @@
-<p>users works!</p>
+<div class="text-center">
+
+    <h2 class="mb-5">Annuaire</h2>
+
+    <ul id="usersList" class="list-group" *ngFor="let user of users">
+        <li class="list-group-item mt-3">
+            <p>{{user.firstname}} {{user.lastname}}</p>
+            <p>{{user.position}}</p>
+            <button class="btn btn-sm btn-success">Message</button>
+        </li>
+    </ul>
+</div>
