@@ -22,8 +22,12 @@ export class AuthenticationService {
             }));
     }
 
-    register() {
-
+    register(email: string, password: string, firstname: string, lastname: string, position: string) {
+        return this.httpClient.post<any>(`http://localhost:3000/${this.registerUrl}`, { email, password, firstname, lastname, position })
+            .pipe(map(body => {
+                localStorage.setItem('token', body.token);
+                return body;
+            }));
     }
 
     logout() {
