@@ -1,12 +1,20 @@
-<div class="text-center">
+<div class="mb-5">
 
-    <h2 class="mb-5">Annuaire</h2>
+    <h2 class="text-center">Annuaire</h2>
 
-    <ul id="usersList" class="list-group" *ngFor="let user of users">
+    <ul class="list-group w-50 m-auto" *ngFor="let user of users">
         <li class="list-group-item mt-3">
-            <p>{{user.firstname}} {{user.lastname}}</p>
-            <p>{{user.position}}</p>
-            <button class="btn btn-sm btn-success">Message</button>
+            <div class="d-flex justify-content-between align-items-top">
+                <span class="text-success font-weight-bold mr-1">{{user.firstname}} {{user.lastname}}</span>
+
+                <button class="btn btn-sm btn-success">Message</button>
+            </div>
+            <div class="d-flex">
+                <span class="font-italic">{{user.position}}</span>
+            </div>
+            <div class="d-flex">
+                <span class="font-italic">{{user.email}}</span>
+            </div>
         </li>
     </ul>
 </div>
