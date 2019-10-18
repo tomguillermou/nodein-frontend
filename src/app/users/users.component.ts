@@ -22,8 +22,19 @@ export class UsersComponent implements OnInit {
         private userService: UserService
     ) { }
 
+    getSearchParams() {
+        return {
+            firstname: this.searchForm.get('firstname').value,
+            lastname: this.searchForm.get('lastname').value,
+            position: this.searchForm.get('position').value,
+            email: this.searchForm.get('email').value
+        };
+    }
+
     ngOnInit() {
-        this.userService.fetchAll()
+        const searchParams = this.getSearchParams();
+
+        this.userService.fetchAll(searchParams)
             .subscribe({
                 next: (body) => {
                     this.users = body.data;
@@ -31,4 +42,14 @@ export class UsersComponent implements OnInit {
             });
     }
 
+    onSubmit() {
+        const searchParams = this.getSearchParams();
+
+        this.userService.fetchAll(searchParams)
+            .subscribe({
+                next: (body) => {
+                    this.users = body.data;
+                }
+            });
+    }
 }

@@ -1,17 +1,39 @@
 <div class="mb-5">
 
-    <div class="w-75 m-auto mb-5">
-        <form [formGroup]="searchForm" class="form-inline justify-content-center">
+    <form [formGroup]="searchForm" class="form-inline justify-content-around mb-5" (ngSubmit)="onSubmit()">
 
-            <input type="text" class="form-control" placeholder="Nom">
+        <div class="col-auto">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Prénom</div>
+                </div>
+                <label class="sr-only" for="inputFirstname">Prénom</label>
+                <input type="text" id="inputFirstname" class="form-control" formControlName="firstname">
+            </div>
+        </div>
 
-            <input type="text" class="form-control" placeholder="Poste">
+        <div class="col-auto">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Nom</div>
+                </div>
+                <label class="sr-only" for="inputLastname">Nom</label>
+                <input type="text" id="inputLastname" class="form-control" formControlName="lastname">
+            </div>
+        </div>
 
-            <input type="text" class="form-control" placeholder="Email">
+        <div class="col-auto">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Poste</div>
+                </div>
+                <label class="sr-only" for="inputPosition">Poste</label>
+                <input type="text" id="inputPosition" class="form-control" formControlName="position">
+            </div>
+        </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+        <button type="submit" class="btn btn-primary">Chercher</button>
+    </form>
 
     <div class="w-50 m-auto">
 
