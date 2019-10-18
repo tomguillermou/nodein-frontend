@@ -1,20 +1,38 @@
 <div class="mb-5">
 
-    <h2 class="text-center">Annuaire</h2>
+    <div class="w-75 m-auto mb-5">
+        <form [formGroup]="searchForm" class="form-inline justify-content-center">
 
-    <ul class="list-group w-50 m-auto" *ngFor="let user of users">
-        <li class="list-group-item mt-3">
-            <div class="d-flex justify-content-between align-items-top">
-                <span class="text-success font-weight-bold mr-1">{{user.firstname}} {{user.lastname}}</span>
+            <input type="text" class="form-control" placeholder="Nom">
 
-                <button class="btn btn-sm btn-success">Message</button>
-            </div>
-            <div class="d-flex">
-                <span class="font-italic">{{user.position}}</span>
-            </div>
-            <div class="d-flex">
-                <span class="font-italic">{{user.email}}</span>
-            </div>
-        </li>
-    </ul>
+            <input type="text" class="form-control" placeholder="Poste">
+
+            <input type="text" class="form-control" placeholder="Email">
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="w-50 m-auto">
+
+        <h2 class="text-center">Annuaire</h2>
+
+        <ul class="list-group" *ngFor="let user of users">
+            <li class="list-group-item mt-3">
+                <div class="d-flex justify-content-between align-items-top">
+                    <span class="text-success font-weight-bold mr-1">{{user.firstname}} {{user.lastname}}</span>
+
+                    <button class="btn btn-sm btn-success">Message</button>
+                </div>
+                <div class="d-flex">
+                    <span class="font-italic">{{user.position}}</span>
+                </div>
+                <div class="d-flex">
+                    <span class="font-italic">{{user.email}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
 </div>
