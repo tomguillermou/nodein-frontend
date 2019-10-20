@@ -3,7 +3,6 @@ import { UserService } from '../_services/user.service';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-    selector: 'app-users',
     templateUrl: './users.component.html'
 })
 export class UsersComponent implements OnInit {
