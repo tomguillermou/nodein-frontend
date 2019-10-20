@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthInterceptor } from './_helpers/auth.interceptor';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { AuthInterceptor } from './_helpers/auth.interceptor';
         HomeComponent,
         RegisterComponent,
         UsersComponent,
-        MessagesComponent
+        MessagesComponent,
+        PostComponent
     ],
     imports: [
         BrowserModule,

@@ -1,15 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../_services/post.service';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css']
+    templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
 
-    constructor() { }
+    private posts;
+
+    fetchPosts() {
+        this.postService.fetchAll()
+            .subscribe({
+                next: (body) => {
+                    this.posts = body.data;
+                    console.log(body.data);
+                },
+                error: (error) => {
+                    console.log(error);
+                }
+            });
+    }
+
+    constructor(
+        private postService: PostService
+    ) { }
 
     ngOnInit() {
+        this.fetchPosts();
     }
 
 }

@@ -1,0 +1,16 @@
+<div class="d-flex mb-2">
+    <span class="text-success font-weight-bold mr-1">
+        {{post.owner.firstname}} {{post.owner.lastname}}, {{post.owner.position}}
+    </span>
+</div>
+<div class="d-flex mb-2">
+    <span>{{post.content}}</span>
+</div>
+<div class="d-flex mb-2">
+    <span class="mr-2">Upvotes: {{post.upvotesCount}}</span>
+    <span class="">Downvotes: {{post.downvotesCount}} </span>
+</div>
+<div class="d-flex">
+    <button class="btn btn-primary btn-sm mr-2">J'aime</button>
+    <button class="btn btn-danger btn-sm">J'aime pas</button>
+</div>
