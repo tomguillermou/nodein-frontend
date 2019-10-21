@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
             .subscribe({
                 next: (body) => {
                     this.posts = body.data;
-                    console.log(body.data);
                 },
                 error: (error) => {
                     console.log(error);
@@ -28,5 +27,4 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         this.fetchPosts();
     }
-
 }

@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ResponseBody } from '../_models/ResponseBody';
 
 @Injectable({
     providedIn: 'root'
 })
-export class PostService {
+export class VoteService {
 
     constructor(
         private httpClient: HttpClient
     ) { }
 
-    fetchAll() {
+    createOne(body) {
 
-        return this.httpClient.get<ResponseBody>('http://localhost:3000/posts');
+        return this.httpClient.post('http://localhost:3000/votes', body);
     }
 }

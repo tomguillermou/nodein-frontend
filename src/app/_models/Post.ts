@@ -5,8 +5,8 @@ export class Post {
     _id: string;
     owner: User;
     content: string;
-    upvotes: number;
-    downvotes: number;
     createdAt: string;
     updatedAt: string;
+    upvotesCount: number;
+    downvotesCount: number;
 }

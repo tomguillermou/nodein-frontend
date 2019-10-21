@@ -8,7 +8,13 @@
         <span>{{post.content}}</span>
     </div>
     <div class="row mb-2">
-        <span class="mr-3"><button class="btn btn-primary btn-sm mr-1">+</button> {{post.upvotesCount}}</span>
-        <span class=""><button class="btn btn-danger btn-sm mr-1">-</button> {{post.downvotesCount}} </span>
+        <span class="mr-3">
+            <button class="btn btn-primary btn-sm mr-1" (click)="onUpvote()" [disabled]="didVote">+</button>
+            {{post.upvotesCount}}
+        </span>
+        <span class="">
+            <button class="btn btn-danger btn-sm mr-1" (click)="onDownvote()" [disabled]="didVote">-</button>
+            {{post.downvotesCount}}
+        </span>
     </div>
 </div>
