@@ -6,9 +6,11 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { UsersComponent } from './users/users.component';
 import { MessagesComponent } from './messages/messages.component';
+import { PostsComponent } from './posts/posts.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'posts', component: PostsComponent, canActivate: [AuthGuard] },
     { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
     { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },

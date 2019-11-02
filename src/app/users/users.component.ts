@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { User } from '../_models/User';
 
 @Component({
     templateUrl: './users.component.html'
 })
 export class UsersComponent implements OnInit {
 
-    users;
+    private users: User[];
 
     searchForm = this.formBuilder.group({
         email: ['', Validators.required],
@@ -30,7 +31,7 @@ export class UsersComponent implements OnInit {
         };
     }
 
-    ngOnInit() {
+    fetchUsers() {
         const searchParams = this.getSearchParams();
 
         this.userService.fetchAll(searchParams)
@@ -39,16 +40,14 @@ export class UsersComponent implements OnInit {
                     this.users = body.data;
                 }
             });
+    }
+
+    ngOnInit() {
+        this.fetchUsers();
     }
 
     onSubmit() {
-        const searchParams = this.getSearchParams();
-
-        this.userService.fetchAll(searchParams)
-            .subscribe({
-                next: (body) => {
-                    this.users = body.data;
-                }
-            });
+        this.fetchUsers();
     }
+
 }

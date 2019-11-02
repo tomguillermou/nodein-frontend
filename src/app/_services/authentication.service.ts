@@ -2,31 +2,45 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+interface LoginRequestBody {
+    email: string;
+    password: string;
+}
+
+interface RegisterRequestBody {
+    email: string;
+    password: string;
+    firstname: string;
+    lastname: string;
+    position: string;
+}
+
+interface AuthResponseBody {
+    token: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })
 export class AuthenticationService {
 
-    loginUrl = 'auth/login';
-    registerUrl = 'auth/register';
-
     constructor(
         private httpClient: HttpClient
     ) { }
 
-    login(email: string, password: string) {
-        return this.httpClient.post<any>(`http://localhost:3000/${this.loginUrl}`, { email, password })
-            .pipe(map(body => {
-                localStorage.setItem('token', body.token);
-                return body;
+    login(requestBody: LoginRequestBody) {
+        return this.httpClient.post<AuthResponseBody>('http://localhost:3000/auth/login', requestBody)
+            .pipe(map(responseBody => {
+                localStorage.setItem('token', responseBody.token);
+                return responseBody;
             }));
     }
 
-    register(email: string, password: string, firstname: string, lastname: string, position: string) {
-        return this.httpClient.post<any>(`http://localhost:3000/${this.registerUrl}`, { email, password, firstname, lastname, position })
-            .pipe(map(body => {
-                localStorage.setItem('token', body.token);
-                return body;
+    register(requestBody: RegisterRequestBody) {
+        return this.httpClient.post<AuthResponseBody>('http://localhost:3000/auth/register', requestBody)
+            .pipe(map(responseBody => {
+                localStorage.setItem('token', responseBody.token);
+                return responseBody;
             }));
     }
 

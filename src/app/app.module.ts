@@ -12,6 +12,8 @@ import { UsersComponent } from './users/users.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthInterceptor } from './_helpers/auth.interceptor';
 import { PostComponent } from './post/post.component';
+import { PostsComponent } from './posts/posts.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -21,13 +23,15 @@ import { PostComponent } from './post/post.component';
         RegisterComponent,
         UsersComponent,
         MessagesComponent,
-        PostComponent
+        PostComponent,
+        PostsComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        BrowserAnimationsModule
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

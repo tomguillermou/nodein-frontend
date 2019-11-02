@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+interface CreateVoteRequestBody {
+    postId: string;
+    type: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -10,8 +15,8 @@ export class VoteService {
         private httpClient: HttpClient
     ) { }
 
-    createOne(body) {
+    createOne(requestBody: CreateVoteRequestBody) {
 
-        return this.httpClient.post('http://localhost:3000/votes', body);
+        return this.httpClient.post('http://localhost:3000/votes', requestBody);
     }
 }

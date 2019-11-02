@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
         const position = this.loginForm.get('position').value;
 
         if (email && password) {
-            this.authenticationService.register(email, password, firstname, lastname, position)
+            this.authenticationService.register({ email, password, firstname, lastname, position })
                 .subscribe({
                     next: (body): void => {
                         this.router.navigateByUrl('/');
@@ -47,4 +47,5 @@ export class RegisterComponent implements OnInit {
                 });
         }
     }
+
 }

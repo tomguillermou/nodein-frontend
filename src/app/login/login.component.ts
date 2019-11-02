@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         const password = this.loginForm.get('password').value;
 
         if (email && password) {
-            this.authenticationService.login(email, password)
+            this.authenticationService.login({ email, password })
                 .subscribe({
                     next: (body): void => {
                         this.router.navigateByUrl('/');

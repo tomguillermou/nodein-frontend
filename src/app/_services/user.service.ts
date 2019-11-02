@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import * as _ from 'lodash';
+import { ResponseBody } from '../_models/ResponseBody';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
-
-    getAllUrl = '/users';
 
     constructor(
         private httpClient: HttpClient
@@ -18,6 +15,6 @@ export class UserService {
 
         const urlSearch = new URLSearchParams(searchParams);
 
-        return this.httpClient.get<any>(`http://localhost:3000${this.getAllUrl}?${urlSearch.toString()}`);
+        return this.httpClient.get<ResponseBody>(`http://localhost:3000/users?${urlSearch.toString()}`);
     }
 }

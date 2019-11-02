@@ -1,0 +1,27 @@
+<div class="container">
+
+    <h2 class="text-center">Publications</h2>
+
+    <!-- Post creation form -->
+    <form [formGroup]="postCreationForm" class="form" (ngSubmit)="onSubmit()">
+
+        <div *ngIf="error" class="alert alert-danger" role="alert">
+            <p>{{error.error.message}}</p>
+        </div>
+
+        <label for="inputContent" class="sr-only">Contenu</label>
+        <input type="textarea" id="inputContent" class="form-control mb-2" placeholder="" formControlName="content"
+            required autofocus>
+
+        <button class="btn btn-success mt-3" type="submit">Se connecter</button>
+    </form>
+
+    <!-- Post list -->
+    <div class="w-50 m-auto">
+        <ul class="list-group" *ngFor="let post of posts">
+            <li class="list-group-item">
+                <app-post [post]="post"></app-post>
+            </li>
+        </ul>
+    </div>
+</div>
