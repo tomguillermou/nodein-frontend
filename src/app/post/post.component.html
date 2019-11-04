@@ -1,20 +1,24 @@
-<div class="container">
-    <div class="row border-bottom mb-2">
-        <span class="text-success font-weight-bold mr-1">
+<div class="d-flex flex-column">
+
+    <div class="mb-2">
+        <p class="font-weight-bold">
             {{post.owner.firstname}} {{post.owner.lastname}}, {{post.owner.position}}
-        </span>
+        </p>
     </div>
-    <div class="row mb-2">
-        <span>{{post.content}}</span>
+
+    <div class="mb-2">
+        <p class="text-break">{{post.content}}</p>
     </div>
-    <div class="row mb-2">
-        <span class="mr-3">
-            <button class="btn  btn-sm btn-primary mr-1" (click)="onUpvote()" [disabled]="didVote">+</button>
-            {{post.upvotesCount}}
-        </span>
-        <span class="">
-            <button class="btn btn-sm btn-danger mr-1" (click)="onDownvote()" [disabled]="didVote">-</button>
-            {{post.downvotesCount}}
-        </span>
+
+    <div class="d-flex flex-row mb-2">
+        <div class="mr-3">
+            <button class="btn btn-sm btn-primary mr-2" (click)="onUpvote()" [disabled]="didVote">+</button>
+            <span class="font-weight-bold">{{post.upvotesCount}}</span>
+        </div>
+
+        <div>
+            <button class="btn btn-sm btn-danger mr-2" (click)="onDownvote()" [disabled]="didVote">+</button>
+            <span class="font-weight-bold">{{post.downvotesCount}}</span>
+        </div>
     </div>
 </div>
