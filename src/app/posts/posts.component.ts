@@ -9,6 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class PostsComponent implements OnInit {
 
     private posts: Post[];
+    private error;
 
     private postCreationForm = this.formBuilder.group({
         content: ['', Validators.required]
@@ -37,7 +38,19 @@ export class PostsComponent implements OnInit {
     }
 
     onSubmit() {
-        console.log('Creating new post...');
+        const content = this.postCreationForm.get('content').value;
+
+        if (content) {
+            this.postService.createOne({ content })
+                .subscribe({
+                    next: (body) => {
+                        this.fetchPosts();
+                    },
+                    error: (error) => {
+                        this.error = error;
+                    }
+                });
+        }
     }
 
 }
