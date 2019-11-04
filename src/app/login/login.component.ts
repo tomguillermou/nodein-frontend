@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
-    templateUrl: './login.component.html'
+    templateUrl: './login.component.html',
+    styles: ['.form { width: 100 %; max-width: 330px; padding: 15px; margin: auto; }']
 })
 export class LoginComponent implements OnInit {
 

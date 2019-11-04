@@ -4,7 +4,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
-    templateUrl: './register.component.html'
+    templateUrl: './register.component.html',
+    styles: ['.form { width: 100 %; max-width: 330px; padding: 15px; margin: auto; }']
 })
 export class RegisterComponent implements OnInit {
 
