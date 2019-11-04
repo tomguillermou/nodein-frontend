@@ -5,7 +5,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
@@ -14,17 +13,18 @@ import { AuthInterceptor } from './_helpers/auth.interceptor';
 import { PostComponent } from './post/post.component';
 import { PostsComponent } from './posts/posts.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
-        HomeComponent,
         RegisterComponent,
         UsersComponent,
         MessagesComponent,
         PostComponent,
         PostsComponent,
+        HeaderComponent,
     ],
     imports: [
         BrowserModule,
