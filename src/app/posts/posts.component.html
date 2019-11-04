@@ -2,30 +2,30 @@
 
 <div class="container-fluid">
 
-    <h2 class="text-center mb-5">Publications</h2>
+    <h2 class="text-center mb-3">Publications</h2>
 
     <div class="w-50 m-auto">
 
-        <div>
-            <h5 class="text-center mb-2">Nouvelle publication</h5>
+        <div class="mb-3">
+            <h6>Ecrire une nouvelle publication :</h6>
 
             <!-- Post creation form -->
-            <form [formGroup]="postCreationForm" class="form mb-5" (ngSubmit)="onSubmit()">
+            <form [formGroup]="postCreationForm" class="form" (ngSubmit)="onSubmit()">
 
                 <div *ngIf="error" class="alert alert-danger" role="alert">
                     <p>{{error.error.message}}</p>
                 </div>
 
                 <label for="inputContent" class="sr-only">Contenu</label>
-                <input type="textarea" id="inputContent" class="form-control form-control-sm mb-2"
-                    formControlName="content" required autofocus>
+                <textarea id="inputContent" name="message" rows="5" cols="30" class="form-control form-control-sm mb-2"
+                    formControlName="content" required autofocus></textarea>
 
                 <button class="btn btn-sm btn-primary" type="submit">Publier</button>
             </form>
         </div>
 
         <div>
-            <h5 class="text-center mb-2">Toutes les publications</h5>
+            <h5 class="text-center">Toutes les publications</h5>
 
             <!-- Post list -->
             <ul class="list-group" *ngFor="let post of posts">
