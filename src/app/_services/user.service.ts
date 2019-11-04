@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ResponseBody } from '../_models/ResponseBody';
+import { ReadManyResponseBody } from '../_models/ReadManyResponseBody';
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +15,6 @@ export class UserService {
 
         const urlSearch = new URLSearchParams(searchParams);
 
-        return this.httpClient.get<ResponseBody>(`http://localhost:3000/users?${urlSearch.toString()}`);
+        return this.httpClient.get<ReadManyResponseBody>(`http://localhost:3000/users?${urlSearch.toString()}`);
     }
 }
