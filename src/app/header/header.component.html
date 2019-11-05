@@ -14,27 +14,8 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="/users" routerLinkActive="active">Annuaire</a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
-            </li>
         </ul>
 
-        <ul class="navbar-nav" *ngIf="isAuthenticated; else authBlock">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/" (click)="onLogout()">Se déconnecter</a>
-            </li>
-        </ul>
-
-        <ng-template #authBlock>
-            <ul class="navbar-nav align-items-center">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/login">Se connecter</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-success" routerLink="/register">S'enregistrer</a>
-                </li>
-            </ul>
-        </ng-template>
+        <button class="btn btn-sm btn-outline-secondary" (click)="onLogout()">Se déconnecter</button>
     </div>
 </nav>

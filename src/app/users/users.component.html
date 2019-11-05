@@ -1,11 +1,12 @@
-<app-header></app-header>
-
 <div class="mb-5">
 
+    <app-header></app-header>
+
     <div class="mb-3">
-        <h2 class="text-center">Annuaire</h2>
+        <h1 class="text-center font-weight-light">Annuaire</h1>
     </div>
 
+    <!-- User searching form -->
     <div class="mb-3">
         <form [formGroup]="searchForm" class="form-inline w-75 m-auto" (ngSubmit)="onSubmit()">
 
@@ -14,8 +15,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">Prénom</div>
                     </div>
-                    <label class="sr-only" for="inputFirstname">Prénom</label>
-                    <input type="text" id="inputFirstname" class="form-control" formControlName="firstname">
+                    <input type="text" class="form-control" formControlName="firstname">
                 </div>
             </div>
 
@@ -24,8 +24,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">Nom</div>
                     </div>
-                    <label class="sr-only" for="inputLastname">Nom</label>
-                    <input type="text" id="inputLastname" class="form-control" formControlName="lastname">
+                    <input type="text" class="form-control" formControlName="lastname">
                 </div>
             </div>
 
@@ -34,8 +33,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">Poste</div>
                     </div>
-                    <label class="sr-only" for="inputPosition">Poste</label>
-                    <input type="text" id="inputPosition" class="form-control" formControlName="position">
+                    <input type="text" class="form-control" formControlName="position">
                 </div>
             </div>
 
@@ -43,26 +41,22 @@
         </form>
     </div>
 
+    <!-- User list -->
     <div class="w-50 m-auto">
-
         <ul class="list-group" *ngFor="let user of users">
             <li class="list-group-item mt-3">
-                <div class="container">
-                    <div class="row border-bottom mb-2">
-                        <span class="text-success font-weight-bold mr-1">{{user.firstname}} {{user.lastname}}</span>
+                <div class="d-flex flex-column">
+                    <div class="mb-2">
+                        <span class="font-weight-bold">{{user.firstname}} {{user.lastname}}</span>
                     </div>
 
-                    <div class="row justify-content-between align-items-end">
-                        <div class="col">
-                            <div class="row">
-                                <span class="font-italic">- {{user.position}}</span>
-                            </div>
-                            <div class="row">
-                                <span class="font-italic">- {{user.email}}</span>
-                            </div>
+                    <div class="d-flex flex-row justify-content-between">
+                        <div class="font-italic">
+                            <p>- {{user.position}}</p>
+                            <p>- {{user.email}}</p>
                         </div>
 
-                        <div class="col-2">
+                        <div>
                             <button class="btn btn-sm btn-success">Message</button>
                         </div>
                     </div>
