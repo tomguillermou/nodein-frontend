@@ -51,4 +51,5 @@ export class AuthenticationService {
     isAuthenticated() {
         return localStorage.getItem('token') !== null;
     }
+
 }
