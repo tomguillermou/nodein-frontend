@@ -2,8 +2,31 @@
 
     <app-header></app-header>
 
-    <div class="mb-3">
-        <h1 class="text-center font-weight-light">Messages</h1>
+    <div class="mb-3" *ngIf="receiver">
+        <h1 class="text-center font-weight-light">Messages avec {{receiver.firstname}} {{receiver.lastname}}</h1>
+    </div>
+
+    <div class="w-50 m-auto">
+
+        <!-- Message creation form -->
+        <form [formGroup]="messageCreationForm" class="form" (ngSubmit)="onSubmit()">
+
+            <div *ngIf="error" class="alert alert-danger" role="alert">
+                <p>{{error.error.message}}</p>
+            </div>
+
+            <textarea rows="3" cols="30" class="form-control form-control-sm mb-2" formControlName="content" required
+                autofocus></textarea>
+
+            <button class="btn btn-sm btn-primary" type="submit">Envoyer</button>
+        </form>
+
+        <!-- Messages list -->
+        <ul class="list-group" *ngFor="let message of messages">
+            <li class="list-group-item  mt-3">
+                {{message.content}}
+            </li>
+        </ul>
     </div>
 
 </div>
