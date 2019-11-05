@@ -12,6 +12,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class MessagesComponent implements OnInit {
 
+    private authUser: User;
     private receiver: User;
     private messages: Message[];
 
@@ -27,6 +28,9 @@ export class MessagesComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+
+        this.userService.fetchMe().subscribe(body => this.authUser = body.user);
+
 
         this.route.paramMap.subscribe(params => {
 

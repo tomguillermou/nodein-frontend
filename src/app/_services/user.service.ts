@@ -25,4 +25,8 @@ export class UserService {
     fetchOne(id: string) {
         return this.httpClient.get<FetchOneResponseBody>(`http://localhost:3000/users/${id}`);
     }
+
+    fetchMe() {
+        return this.httpClient.get<FetchOneResponseBody>('http://localhost:3000/users/me');
+    }
 }

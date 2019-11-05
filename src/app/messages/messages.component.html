@@ -9,19 +9,21 @@
     <div class="w-50 m-auto">
 
         <!-- Message creation form -->
-        <h6>Ecrire un nouveau message :</h6>
+        <div class="border-bottom">
+            <h6>Ecrire un nouveau message :</h6>
 
-        <form [formGroup]="messageCreationForm" class="form" (ngSubmit)="onSubmit()">
+            <form [formGroup]="messageCreationForm" class="form mb-3" (ngSubmit)="onSubmit()">
 
-            <textarea rows="3" cols="30" class="form-control form-control-sm mb-2" formControlName="content" required
-                autofocus></textarea>
+                <textarea rows="3" cols="30" class="form-control form-control-sm mb-2" formControlName="content"
+                    required autofocus></textarea>
 
-            <button class="btn btn-sm btn-primary" type="submit">Envoyer</button>
-        </form>
+                <button class="btn btn-sm btn-success" type="submit">Envoyer</button>
+            </form>
+        </div>
 
         <!-- Messages list -->
         <ul class="list-group" *ngFor="let message of messages">
-            <li class="list-group-item  mt-3">
+            <li class="list-group-item mt-3" [ngClass]="{'bg-success text-white' : authUser._id === message.owner}">
                 {{message.content}}
                 <p class="font-weight-light">Le {{message.createdAt | date}} à
                     {{message.createdAt | date:'shortTime'}}
