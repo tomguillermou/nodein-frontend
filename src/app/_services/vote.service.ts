@@ -16,7 +16,6 @@ export class VoteService {
     ) { }
 
     createOne(requestBody: CreateVoteRequestBody) {
-
         return this.httpClient.post('http://localhost:3000/votes', requestBody);
     }
 }

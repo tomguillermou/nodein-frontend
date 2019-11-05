@@ -16,7 +16,6 @@ export class PostService {
     ) { }
 
     fetchAll() {
-
         return this.httpClient.get<ReadManyResponseBody>('http://localhost:3000/posts');
     }
 

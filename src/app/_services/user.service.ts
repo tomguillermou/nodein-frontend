@@ -12,7 +12,6 @@ export class UserService {
     ) { }
 
     fetchAll(searchParams) {
-
         const urlSearch = new URLSearchParams(searchParams);
 
         return this.httpClient.get<ReadManyResponseBody>(`http://localhost:3000/users?${urlSearch.toString()}`);
