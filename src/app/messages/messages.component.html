@@ -2,18 +2,16 @@
 
     <app-header></app-header>
 
-    <div class="mb-3" *ngIf="receiver">
+    <div class="mb-5" *ngIf="receiver">
         <h1 class="text-center font-weight-light">Messages avec {{receiver.firstname}} {{receiver.lastname}}</h1>
     </div>
 
     <div class="w-50 m-auto">
 
         <!-- Message creation form -->
-        <form [formGroup]="messageCreationForm" class="form" (ngSubmit)="onSubmit()">
+        <h6>Ecrire un nouveau message :</h6>
 
-            <div *ngIf="error" class="alert alert-danger" role="alert">
-                <p>{{error.error.message}}</p>
-            </div>
+        <form [formGroup]="messageCreationForm" class="form" (ngSubmit)="onSubmit()">
 
             <textarea rows="3" cols="30" class="form-control form-control-sm mb-2" formControlName="content" required
                 autofocus></textarea>
@@ -25,8 +23,12 @@
         <ul class="list-group" *ngFor="let message of messages">
             <li class="list-group-item  mt-3">
                 {{message.content}}
+                <p class="font-weight-light">Le {{message.createdAt | date}} à
+                    {{message.createdAt | date:'shortTime'}}
+                </p>
             </li>
         </ul>
+
     </div>
 
 </div>
