@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
-import { AuthenticationService } from '../_services/auth.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AuthenticationService } from '../../_services/auth.service';
 
 @Component({
-    templateUrl: './login.component.html',
+    templateUrl: './register.component.html',
     styles: ['.form { width: 100 %; max-width: 330px; padding: 15px; margin: auto; }']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
     error = '';
 
     loginForm = this.formBuilder.group({
         email: ['', Validators.required],
-        password: ['', Validators.required]
+        password: ['', Validators.required],
+        firstname: ['', Validators.required],
+        lastname: ['', Validators.required],
+        position: ['', Validators.required]
     });
 
     constructor(
@@ -30,9 +32,12 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         const email = this.loginForm.get('email').value;
         const password = this.loginForm.get('password').value;
+        const firstname = this.loginForm.get('firstname').value;
+        const lastname = this.loginForm.get('lastname').value;
+        const position = this.loginForm.get('position').value;
 
         if (email && password) {
-            this.authenticationService.login({ email, password })
+            this.authenticationService.register({ email, password, firstname, lastname, position })
                 .subscribe({
                     next: (body): void => {
                         this.router.navigateByUrl('/');
