@@ -7,7 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HeaderComponent } from './_components/_layout/header/header.component';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 import { AuthInterceptor } from './_helpers/auth.interceptor';
 
@@ -24,7 +24,7 @@ import { AuthInterceptor } from './_helpers/auth.interceptor';
         BrowserAnimationsModule
     ],
     providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, // TODO: Remove and inject token via API service implementation
     ],
     bootstrap: [AppComponent]
 })

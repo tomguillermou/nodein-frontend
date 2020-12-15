@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+// NOT RELEVANT IF YOU IMPLEMENT AN API SERVICE CLASS THAT INJECTS TOKEN IN HEADERS FOR EACH REQUEST
+// TODO: Change that
+
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 

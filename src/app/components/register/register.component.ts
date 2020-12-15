@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthenticationService } from '../../_services/auth.service';
+import { AuthenticationService } from '../../services/auth.service';
 
 @Component({
     templateUrl: './register.component.html',

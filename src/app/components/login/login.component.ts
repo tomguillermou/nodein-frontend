@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../../_services/auth.service';
+import { AuthenticationService } from '../../services/auth.service';
 
 @Component({
     templateUrl: './login.component.html',
