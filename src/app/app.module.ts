@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 import { AuthInterceptor } from './helpers/auth.interceptor';
 
+import { HeaderComponent } from './components/_layout/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { CountryDetailsComponent } from './components/country-details/country-details.component';
 import { CountryTableComponent } from './components/country-table/country-table.component';
