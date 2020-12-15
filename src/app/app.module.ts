@@ -9,12 +9,17 @@ import { AppComponent } from './app.component';
 
 import { AuthInterceptor } from './helpers/auth.interceptor';
 
-import { AuthInterceptor } from './_helpers/auth.interceptor';
+import { HomeComponent } from './components/home/home.component';
+import { CountryDetailsComponent } from './components/country-details/country-details.component';
+import { CountryTableComponent } from './components/country-table/country-table.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
+        HomeComponent,
+        CountryDetailsComponent,
+        CountryTableComponent
     ],
     imports: [
         BrowserModule,

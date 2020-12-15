@@ -1,0 +1,7 @@
+<div *ngIf="country">
+    <h1>Country details :</h1>
+    <p>- ID # {{ country.id }}</p>
+    <p>- Flag : <img [src]="country.flag" class="mr-2" style="width: 20px"></p>
+    <p>- Area : {{ country.area | number }}</p>
+    <p>- Population: {{ country.population | number }}</p>
+</div>
