@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
-import { countries } from "../../../mocks/countries";
+import { countries } from "../mocks/countries";
 
-import { Country } from '../models/Country';
+import { Country } from '../models/db/Country';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class CountryService {
 
   private _countries$ = new BehaviorSubject<Country[]>(countries);

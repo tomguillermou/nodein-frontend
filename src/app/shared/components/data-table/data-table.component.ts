@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Observable } from 'rxjs';
 
-import { CountryService } from "../../services/country.service";
+import { Country } from "../../../shared/models/db/Country";
 
-import { Country } from "../../models/Country";
+import { CountryService } from "../../../shared/services/country.service";
 
 @Component({
-  selector: 'app-country-table',
-  templateUrl: './country-table.component.html',
-  styleUrls: ['./country-table.component.css']
+  selector: 'app-data-table',
+  templateUrl: './data-table.component.html',
+  styleUrls: ['./data-table.component.css']
 })
-export class CountryTableComponent implements OnInit {
+export class DataTableComponent implements OnInit {
 
   countries$: Observable<Country[]>; // using async pipe
 
