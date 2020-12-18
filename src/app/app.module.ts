@@ -1,37 +1,32 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+// App routing
+import { AppRoutingModule } from "./app-routing.module";
 
-import { AuthInterceptor } from './helpers/auth.interceptor';
+// Modules
+import { CoreModule } from "./core/core.module";
+import { SharedModule } from "./shared/shared.module";
 
-import { HeaderComponent } from './components/_layout/header/header.component';
-import { HomeComponent } from './components/home/home.component';
-import { CountryDetailsComponent } from './components/country-details/country-details.component';
-import { CountryTableComponent } from './components/country-table/country-table.component';
+// Pages
+import { HomeModule } from "./pages/home/home.module";
+
+// App + layout components
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./core/layout/header/header.component";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        HomeComponent,
-        CountryDetailsComponent,
-        CountryTableComponent
-    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        BrowserAnimationsModule
+        CoreModule,
+        SharedModule,
+        HomeModule,
     ],
-    providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, // TODO: Remove and inject token via API service implementation
+    declarations: [
+        HeaderComponent,
+        AppComponent,
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule { }
