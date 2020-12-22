@@ -2,20 +2,23 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 // Components
-import { DataDetailsComponent } from "./components/data-details/data-details.component";
-import { DataTableComponent } from "./components/data-table/data-table.component";
+import { CountriesComponent } from "./components/countries/countries.component";
+
+// Services
+import { CountryService } from "./services/country.service";
 
 @NgModule({
     imports: [
         CommonModule,
     ],
     declarations: [
-        DataDetailsComponent,
-        DataTableComponent,
+        CountriesComponent,
     ],
     exports: [
-        DataDetailsComponent,
-        DataTableComponent,
+        CountriesComponent,
+    ],
+    providers: [
+        CountryService
     ]
 })
 export class SharedModule { }
