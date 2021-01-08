@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
 
 // Components
 import { CountriesComponent } from "./components/countries/countries.component";
@@ -8,17 +9,9 @@ import { CountriesComponent } from "./components/countries/countries.component";
 import { CountryService } from "./services/country.service";
 
 @NgModule({
-    imports: [
-        CommonModule,
-    ],
-    declarations: [
-        CountriesComponent,
-    ],
-    exports: [
-        CountriesComponent,
-    ],
-    providers: [
-        CountryService
-    ]
+    imports: [BrowserModule, FormsModule],
+    declarations: [CountriesComponent],
+    exports: [BrowserModule, FormsModule, CountriesComponent],
+    providers: [CountryService],
 })
-export class SharedModule { }
+export class SharedModule {}
