@@ -4,11 +4,21 @@ a .navbar-brand {
     color: rgb(56, 199, 147);
 }
 
-html, body { 
-    height: 100%; 
+html,
+body {
+    height: 100%;
 }
 
-body { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    background-color: lightslategrey;
+    color: white;
 }

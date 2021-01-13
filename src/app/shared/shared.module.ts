@@ -1,21 +1,17 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
 
 // Components
-import { DataDetailsComponent } from "./components/data-details/data-details.component";
-import { DataTableComponent } from "./components/data-table/data-table.component";
+import { CountriesComponent } from "./components/countries/countries.component";
+
+// Services
+import { CountryService } from "./services/country.service";
 
 @NgModule({
-    imports: [
-        CommonModule,
-    ],
-    declarations: [
-        DataDetailsComponent,
-        DataTableComponent,
-    ],
-    exports: [
-        DataDetailsComponent,
-        DataTableComponent,
-    ]
+    imports: [BrowserModule, FormsModule],
+    declarations: [CountriesComponent],
+    exports: [BrowserModule, FormsModule, CountriesComponent],
+    providers: [CountryService],
 })
-export class SharedModule { }
+export class SharedModule {}
