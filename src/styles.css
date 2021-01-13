@@ -19,6 +19,11 @@ body {
 }
 
 .clickable:hover {
-    background-color: lightslategrey;
+    background-color: grey;
+    color: white;
+}
+
+.selected {
+    background-color: grey;
     color: white;
 }
