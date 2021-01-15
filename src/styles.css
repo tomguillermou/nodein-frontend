@@ -13,17 +13,3 @@ body {
     margin: 0;
     font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
-
-.clickable {
-    cursor: pointer;
-}
-
-.clickable:hover {
-    background-color: grey;
-    color: white;
-}
-
-.selected {
-    background-color: grey;
-    color: white;
-}
