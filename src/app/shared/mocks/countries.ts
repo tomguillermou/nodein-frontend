@@ -10,6 +10,9 @@ export const countries: Country[] = [
         continent: 'Asie',
         area: 17075200,
         population: 146989754,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 2,
@@ -20,6 +23,9 @@ export const countries: Country[] = [
         continent: 'Europe',
         area: 640679,
         population: 64979548,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 3,
@@ -30,6 +36,9 @@ export const countries: Country[] = [
         continent: 'Europe',
         area: 357114,
         population: 82114224,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 4,
@@ -40,6 +49,9 @@ export const countries: Country[] = [
         continent: 'Europe',
         area: 92090,
         population: 10329506,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 5,
@@ -50,6 +62,9 @@ export const countries: Country[] = [
         continent: 'Amerique',
         area: 9976140,
         population: 36624199,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 6,
@@ -60,6 +75,9 @@ export const countries: Country[] = [
         continent: 'Asie',
         area: 331212,
         population: 95540800,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 7,
@@ -70,6 +88,9 @@ export const countries: Country[] = [
         continent: 'Amerique',
         area: 8515767,
         population: 209288278,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 8,
@@ -80,6 +101,9 @@ export const countries: Country[] = [
         continent: 'Amerique',
         area: 1964375,
         population: 129163276,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 9,
@@ -90,6 +114,9 @@ export const countries: Country[] = [
         continent: 'Amerique',
         area: 9629091,
         population: 324459463,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 10,
@@ -100,6 +127,9 @@ export const countries: Country[] = [
         continent: 'Asie',
         area: 3287263,
         population: 1324171354,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 11,
@@ -110,6 +140,9 @@ export const countries: Country[] = [
         continent: 'Asie',
         area: 1910931,
         population: 263991379,
+        get density() {
+            return this.population / this.area;
+        },
     },
     {
         id: 12,
@@ -120,5 +153,8 @@ export const countries: Country[] = [
         continent: 'Asie',
         area: 9596960,
         population: 1409517397,
+        get density() {
+            return this.population / this.area;
+        },
     },
 ];

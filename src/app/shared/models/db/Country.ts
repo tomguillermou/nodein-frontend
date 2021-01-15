@@ -6,4 +6,5 @@ export interface Country {
     continent: 'Europe' | 'Amerique' | 'Asie' | 'Afrique' | 'Oceanie';
     area: number;
     population: number;
+    density: number;
 }
