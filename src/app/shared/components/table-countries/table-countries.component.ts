@@ -21,7 +21,7 @@ export class TableCountriesComponent implements OnInit {
             this.countries = this.countryService.sortCountries(countries);
         });
 
-        this.countryService.country$.subscribe(
+        this.countryService.selectedCountry$.subscribe(
             (country) => (this.selectedCountry = country)
         );
     }

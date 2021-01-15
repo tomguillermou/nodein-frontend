@@ -8,7 +8,7 @@ import { Country } from '../models/db/Country';
 @Injectable()
 export class CountryService {
     private _countries$ = new BehaviorSubject<Country[]>(countries);
-    private _country$ = new Subject<Country>();
+    private _selectedCountry$ = new Subject<Country>();
 
     constructor() {}
 
@@ -16,12 +16,12 @@ export class CountryService {
         return this._countries$.asObservable();
     }
 
-    public get country$(): Observable<Country> {
-        return this._country$.asObservable();
+    public get selectedCountry$(): Observable<Country> {
+        return this._selectedCountry$.asObservable();
     }
 
     public emitCountry(country: Country): void {
-        this._country$.next(country);
+        this._selectedCountry$.next(country);
     }
 
     /**

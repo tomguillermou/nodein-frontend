@@ -10,11 +10,13 @@ import { CountryService } from '../../../../shared/services/country.service';
     styleUrls: ['./modal-edit-country.component.css'],
 })
 export class ModalEditCountryComponent implements OnInit {
-    @Input() country: Country;
+    selectedCountry: Country;
 
-    constructor(private countryService: CountryService) {}
-
-    ngOnInit(): void {
-        console.log('open selected country', this.country);
+    constructor(private countryService: CountryService) {
+        this.countryService.selectedCountry$.subscribe(
+            (country) => (this.selectedCountry = country)
+        );
     }
+
+    ngOnInit(): void {}
 }
