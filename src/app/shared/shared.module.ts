@@ -1,17 +1,17 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 // Components
-import { CountriesComponent } from "./components/countries/countries.component";
+import { TableCountriesModule } from './components/table-countries/table-countries.module';
 
 // Services
-import { CountryService } from "./services/country.service";
+import { CountryService } from './services/country.service';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule],
-    declarations: [CountriesComponent],
-    exports: [BrowserModule, FormsModule, CountriesComponent],
+    imports: [BrowserModule, FormsModule, TableCountriesModule],
+    declarations: [],
+    exports: [BrowserModule, FormsModule, TableCountriesModule],
     providers: [CountryService],
 })
 export class SharedModule {}
