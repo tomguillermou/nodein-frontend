@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AuthInterceptor } from './interceptors/auth.interceptor';
+// Services
+import { ApiService } from './services/api.service';
+import { AuthenticationService } from './services/auth.service';
 
 @NgModule({
     declarations: [],
-    imports: [
-        HttpClientModule,
-    ],
-    providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, // TODO: Remove and inject token via API service implementation
-    ]
+    imports: [HttpClientModule],
+    providers: [ApiService, AuthenticationService],
 })
-export class CoreModule { }
+export class CoreModule {}

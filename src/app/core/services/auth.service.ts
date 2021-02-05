@@ -19,37 +19,37 @@ interface AuthResponseBody {
     token: string;
 }
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class AuthenticationService {
+    constructor(private httpClient: HttpClient) {}
 
-    constructor(
-        private httpClient: HttpClient
-    ) { }
-
-    login(requestBody: LoginRequestBody) {
-        return this.httpClient.post<AuthResponseBody>('http://localhost:3000/auth/login', requestBody)
-            .pipe(map(responseBody => {
-                localStorage.setItem('token', responseBody.token);
-                return responseBody;
-            }));
+    public login(requestBody: LoginRequestBody) {
+        return this.httpClient
+            .post<AuthResponseBody>('http://localhost:3000/auth/login', requestBody)
+            .pipe(
+                map((responseBody) => {
+                    localStorage.setItem('token', responseBody.token);
+                    return responseBody;
+                })
+            );
     }
 
-    register(requestBody: RegisterRequestBody) {
-        return this.httpClient.post<AuthResponseBody>('http://localhost:3000/auth/register', requestBody)
-            .pipe(map(responseBody => {
-                localStorage.setItem('token', responseBody.token);
-                return responseBody;
-            }));
+    public register(requestBody: RegisterRequestBody) {
+        return this.httpClient
+            .post<AuthResponseBody>('http://localhost:3000/auth/register', requestBody)
+            .pipe(
+                map((responseBody) => {
+                    localStorage.setItem('token', responseBody.token);
+                    return responseBody;
+                })
+            );
     }
 
-    logout() {
+    public removeToken(): void {
         localStorage.removeItem('token');
     }
 
-    isAuthenticated() {
-        return localStorage.getItem('token') !== null;
+    public getToken(): string | null {
+        return localStorage.getItem('token');
     }
-
 }

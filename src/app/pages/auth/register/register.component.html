@@ -1,26 +1,54 @@
 <form [formGroup]="loginForm" class="form text-center mt-5" (ngSubmit)="onSubmit()">
-
-    <img class="mb-3" src="assets/brand.png" alt="" height="40">
+    <img class="mb-3" src="assets/brand.png" alt="" height="40" />
 
     <h1 class="h3 mb-3">Créez votre compte</h1>
 
-    <div *ngIf="error" class="alert alert-danger" role="alert">
+    <!-- <div *ngIf="error" class="alert alert-danger" role="alert">
         <p>{{error.error.message}}</p>
-    </div>
+    </div> -->
 
-    <input type="email" class="form-control mb-2" placeholder="Adresse email" formControlName="email" required
-        autofocus>
+    <input
+        type="email"
+        class="form-control mb-2"
+        placeholder="Adresse email"
+        formControlName="email"
+        required
+        autofocus
+    />
 
-    <input type="password" class="form-control mb-2" placeholder="Mot de passe" formControlName="password" required>
+    <input
+        type="password"
+        class="form-control mb-2"
+        placeholder="Mot de passe"
+        formControlName="password"
+        required
+    />
 
-    <input type="text" class="form-control mb-2" placeholder="Prénom" formControlName="firstname" required>
+    <input
+        type="text"
+        class="form-control mb-2"
+        placeholder="Prénom"
+        formControlName="firstname"
+        required
+    />
 
-    <input type="text" class="form-control mb-2" placeholder="Nom" formControlName="lastname" required>
+    <input
+        type="text"
+        class="form-control mb-2"
+        placeholder="Nom"
+        formControlName="lastname"
+        required
+    />
 
-    <input type="text" class="form-control mb-2" placeholder="Poste" formControlName="position" required>
+    <input
+        type="text"
+        class="form-control mb-2"
+        placeholder="Poste"
+        formControlName="position"
+        required
+    />
 
     <a routerLink="/login">Déjà inscrit ? Cliquez ici</a>
 
     <button class="btn btn-success btn-block mt-3" type="submit">Créer mon compte</button>
-
 </form>

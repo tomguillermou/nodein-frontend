@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthenticationService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+
+// import { AuthenticationService } from '../../services/auth.service';
 
 @Component({
     templateUrl: './register.component.html',
-    styles: ['.form { width: 100 %; max-width: 330px; padding: 15px; margin: auto; }']
+    styles: ['.form { width: 100 %; max-width: 330px; padding: 15px; margin: auto; }'],
 })
 export class RegisterComponent implements OnInit {
-
     error = '';
 
     loginForm = this.formBuilder.group({
@@ -16,17 +16,16 @@ export class RegisterComponent implements OnInit {
         password: ['', Validators.required],
         firstname: ['', Validators.required],
         lastname: ['', Validators.required],
-        position: ['', Validators.required]
+        position: ['', Validators.required],
     });
 
     constructor(
         private router: Router,
-        private formBuilder: FormBuilder,
-        private authenticationService: AuthenticationService
-    ) { }
+        private formBuilder: FormBuilder // private authenticationService: AuthenticationService
+    ) {}
 
     ngOnInit() {
-        this.authenticationService.logout();
+        // this.authenticationService.logout();
     }
 
     onSubmit() {
@@ -37,16 +36,15 @@ export class RegisterComponent implements OnInit {
         const position = this.loginForm.get('position').value;
 
         if (email && password) {
-            this.authenticationService.register({ email, password, firstname, lastname, position })
-                .subscribe({
-                    next: (body): void => {
-                        this.router.navigateByUrl('/');
-                    },
-                    error: (error): void => {
-                        this.error = error;
-                    }
-                });
+            // this.authenticationService.register({ email, password, firstname, lastname, position })
+            //     .subscribe({
+            //         next: (body): void => {
+            //             this.router.navigateByUrl('/');
+            //         },
+            //         error: (error): void => {
+            //             this.error = error;
+            //         }
+            //     });
         }
     }
-
 }

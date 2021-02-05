@@ -1,11 +1,10 @@
-import { Country } from '../models/db/Country';
+import { Country } from 'app/shared/components/countries/countries.interfaces';
 
 export const countries: Country[] = [
     {
         id: 1,
         name: 'Russia',
-        flag:
-            'https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg',
         hemisphere: 'Nord',
         continent: 'Asie',
         area: 17075200,
@@ -14,8 +13,7 @@ export const countries: Country[] = [
     {
         id: 2,
         name: 'France',
-        flag:
-            'https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg',
         hemisphere: 'Nord',
         continent: 'Europe',
         area: 640679,
@@ -24,8 +22,7 @@ export const countries: Country[] = [
     {
         id: 3,
         name: 'Germany',
-        flag:
-            'https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg',
         hemisphere: 'Nord',
         continent: 'Europe',
         area: 357114,
@@ -34,8 +31,7 @@ export const countries: Country[] = [
     {
         id: 4,
         name: 'Portugal',
-        flag:
-            'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg',
         hemisphere: 'Nord',
         continent: 'Europe',
         area: 92090,
@@ -44,8 +40,7 @@ export const countries: Country[] = [
     {
         id: 5,
         name: 'Canada',
-        flag:
-            'https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg',
         hemisphere: 'Nord',
         continent: 'Amerique',
         area: 9976140,
@@ -54,8 +49,7 @@ export const countries: Country[] = [
     {
         id: 6,
         name: 'Vietnam',
-        flag:
-            'https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg',
         hemisphere: 'Sud',
         continent: 'Asie',
         area: 331212,
@@ -64,8 +58,7 @@ export const countries: Country[] = [
     {
         id: 7,
         name: 'Brazil',
-        flag:
-            'https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg',
         hemisphere: 'Sud',
         continent: 'Amerique',
         area: 8515767,
@@ -74,8 +67,7 @@ export const countries: Country[] = [
     {
         id: 8,
         name: 'Mexico',
-        flag:
-            'https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg',
         hemisphere: 'Sud',
         continent: 'Amerique',
         area: 1964375,
@@ -94,8 +86,7 @@ export const countries: Country[] = [
     {
         id: 10,
         name: 'India',
-        flag:
-            'https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg',
         hemisphere: 'Sud',
         continent: 'Asie',
         area: 3287263,
@@ -104,8 +95,7 @@ export const countries: Country[] = [
     {
         id: 11,
         name: 'Indonesia',
-        flag:
-            'https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg',
+        flag: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg',
         hemisphere: 'Nord',
         continent: 'Asie',
         area: 1910931,

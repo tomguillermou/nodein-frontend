@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="!errorNoData" class="container">
     <div class="row">
         <div class="col-9">
             <table class="table">
@@ -21,11 +21,7 @@
                         (click)="selectCountry(country)"
                     >
                         <th scope="row">
-                            <img
-                                [src]="country.flag"
-                                class="mr-2"
-                                style="width: 20px"
-                            />
+                            <img [src]="country.flag" class="mr-2" style="width: 20px" />
                             {{ country.name }}
                         </th>
                         <td>{{ country.continent }}</td>
@@ -40,11 +36,7 @@
         <div class="col-3">
             <div *ngIf="selectedCountry" class="card">
                 <h2 class="card-header">
-                    <img
-                        [src]="selectedCountry.flag"
-                        class="mr-2"
-                        style="width: 20px"
-                    />
+                    <img [src]="selectedCountry.flag" class="mr-2" style="width: 20px" />
                     {{ selectedCountry.name }}
                 </h2>
                 <div class="card-body">

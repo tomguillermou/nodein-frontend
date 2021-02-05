@@ -1,20 +1,32 @@
-<form [formGroup]="loginForm" class="form text-center mt-5" (ngSubmit)="onSubmit()">
-
-    <img class="mb-3" src="assets/brand.png" alt="" height="40">
+<div class="text-center">
+    <img class="mb-3" src="assets/brand.png" alt="" height="40" />
 
     <h1 class="h3 mb-3">Connectez-vous</h1>
+</div>
 
-    <div *ngIf="error" class="alert alert-danger" role="alert">
-        <p>{{error.error.message}}</p>
-    </div>
+<form [formGroup]="loginForm" class="form text-center mt-5" (ngSubmit)="onSubmit()">
+    <!-- <div *ngIf="error" class="alert alert-danger" role="alert">
+        <p>{{ error.error.message }}</p>
+    </div> -->
 
-    <input type="email" class="form-control mb-2" placeholder="Adresse email" formControlName="email" required
-        autofocus>
+    <input
+        type="email"
+        class="form-control mb-2"
+        placeholder="Adresse email"
+        formControlName="email"
+        required
+        autofocus
+    />
 
-    <input type="password" class="form-control mb-2" placeholder="Mot de passe" formControlName="password" required>
+    <input
+        type="password"
+        class="form-control mb-2"
+        placeholder="Mot de passe"
+        formControlName="password"
+        required
+    />
 
-    <a routerLink="/register">Pas encore inscrit ? Cliquez ici</a>
+    <p>Pas encore inscrit ?<a routerLink="/register"> Cliquez ici</a></p>
 
     <button class="btn btn-success btn-block mt-3" type="submit">Se connecter</button>
-
 </form>

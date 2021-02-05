@@ -6,17 +6,13 @@ import { Router } from '@angular/router';
     templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
-
     private isAuthenticated: boolean;
 
-    constructor(
-        private router: Router,
-    ) { }
+    constructor(private router: Router) {}
 
-    ngOnInit() { }
+    ngOnInit(): void {}
 
-    onLogout() {
-        this.router.navigate(['/login']);
+    onLogout(): void {
+        this.router.navigateByUrl('/login');
     }
-
 }

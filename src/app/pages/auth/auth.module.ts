@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
 
-// Page component(s)
-import { HomeComponent } from './home.component';
+// Page components
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-    { path: 'home', component: HomeComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
@@ -15,7 +16,7 @@ const routes: Routes = [
         SharedModule,
         RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     ],
-    declarations: [HomeComponent],
+    declarations: [LoginComponent, RegisterComponent],
     exports: [RouterModule],
 })
-export class HomeModule {}
+export class AuthModule {}

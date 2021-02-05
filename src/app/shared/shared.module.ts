@@ -1,17 +1,18 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Components
-import { CountriesComponent } from "./components/countries/countries.component";
+import { CountriesComponent } from './components/countries/countries.component';
 
-// Services
-import { CountryService } from "./services/country.service";
+// Services$
+import { ArrayService } from './services/array.service';
+import { ChartService } from './services/chart.service';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule],
+    imports: [BrowserModule, ReactiveFormsModule],
     declarations: [CountriesComponent],
-    exports: [BrowserModule, FormsModule, CountriesComponent],
-    providers: [CountryService],
+    exports: [BrowserModule, ReactiveFormsModule, CountriesComponent],
+    providers: [ArrayService, ChartService],
 })
 export class SharedModule {}

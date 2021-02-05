@@ -1,33 +1,5 @@
 <div class="container">
-    <!-- <div class="mb-5">
-        <div *ngFor="let rowData of data" class="mb-2">
-            <div class="row">
-                <p class="col-2 font-weight-bold">#{{ rowData.id }}</p>
-                <input
-                    class="col"
-                    type="number"
-                    [value]="rowData.value"
-                    (input)="verifyValue($event.target.valueAsNumber, rowData)"
-                    min="{{ defaultNewValue }}"
-                />
-                <button class="col" (click)="updateData(rowData.id)">
-                    Update
-                </button>
-            </div>
-            <div
-                *ngIf="
-                    showInputErrorMessage &&
-                    showInputErrorMessage.forRowData === rowData.id
-                "
-                class="row"
-            >
-                <p class="text-warning"> {{ showInputErrorMessage.message }}</p>
-            </div>
-        </div>
-    </div>
-
-    <input type="number" [(ngModel)]="newValue" min="{{ defaultNewValue }}" />
-    <button (click)="addData(newValue)">Add value</button> -->
-
     <app-countries></app-countries>
+
+    <div id="container" style="width: 100%; height: 400px"></div>
 </div>
